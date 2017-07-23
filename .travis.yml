@@ -113,4 +113,4 @@ script:
   - make -j$(nproc)
 
 after_success:
-  - curl --upload-file build/demo https://transfer.sh/demo
+  - curl --upload-file demo https://transfer.sh/demo
