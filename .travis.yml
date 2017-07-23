@@ -1,3 +1,6 @@
+language: cpp
+dist: trusty
+
 install: make get-deps
 
 matrix:
