@@ -9,7 +9,7 @@ bool KDesktopEnvironment::configToolPath(string &path) {
     
     auto type = [&programPath](string programName) {
         stringstream command;
-        command << "type '" << programName << "'";
+        command << "type '" << programName << "' 2>&1 1>/dev/null";
         return callProgramAndGetFirstLineOfOutput(command.str(), programPath);
     };
 
