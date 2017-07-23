@@ -4,6 +4,7 @@
 // global headers
 #include <sstream>
 #include <typeinfo>
+#include <vector>
 
 // implementation headers
 #include "gnome.h"
