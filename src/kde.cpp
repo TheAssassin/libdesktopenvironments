@@ -51,12 +51,12 @@ bool KDesktopEnvironment::searchInKdeConfig(const string pattern, string &output
         ifstream kdeGlobalsFile(pathToKdeGlobals.str().c_str());
 
         string line;
-        while (getline(kdeGlobalsFile, line)) {
-            if (line.find(pattern) != string::npos) {
-                output = line;
-                return true;
-            }
+        if (searchLineInFile(kdeGlobalsFile, pattern, line)) {
+            output = line;
+            return true;
         }
+
+        return false;
     }
 
     return false;
