@@ -15,3 +15,11 @@ portable.
 This project was heavily inspired by
 [ScreenFetch](https://github.com/KittyKatt/screenFetch/)'s desktop
 environment detection code.
+
+
+Copyright
+---------
+
+Copyright 2017 TheAssassin. Licensed under the terms of the
+[MIT license](https://opensource.org/licenses/mit-license.php). A copy
+can be found in the file LICENSE.
