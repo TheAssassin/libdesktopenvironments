@@ -1,6 +1,8 @@
 // own header
 #include "lxqt.h"
 
+using namespace std;
+
 bool LxqtDesktopEnvironment::gtkInterfaceFont(string &font) {
     // TODO: find proper method to query the font from LXQt
 

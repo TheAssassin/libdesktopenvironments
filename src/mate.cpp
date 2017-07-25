@@ -1,5 +1,7 @@
 #include "mate.h"
 
+using namespace std;
+
 bool MateDesktopEnvironment::gtkInterfaceFont(string &font) {
     if(!callProgramAndGetFirstLineOfOutput("gsettings get org.mate.interface font-name", font))
         return false;

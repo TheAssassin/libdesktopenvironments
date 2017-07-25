@@ -4,11 +4,11 @@
 
 class KDesktopEnvironment : public IDesktopEnvironment {
 private:
-    static bool configToolPath(string &path);
-    static bool searchInKdeConfig(const string pattern, string &output);
-    static bool searchInGtkRc(const string patter, string &output);
+    static bool configToolPath(std::string &path);
+    static bool searchInKdeConfig(const std::string pattern, std::string &output);
+    static bool searchInGtkRc(const std::string patter, std::string &output);
 
 public:
-    bool gtkInterfaceFont(string &font);
-    string name();
+    bool gtkInterfaceFont(std::string &font);
+    std::string name();
 };

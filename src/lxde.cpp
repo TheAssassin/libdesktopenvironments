@@ -1,6 +1,8 @@
 // own header
 #include "lxde.h"
 
+using namespace std;
+
 bool LxdeDesktopEnvironment::gtkInterfaceFont(string &font) {
     auto configDirectory = pathToConfigHome();
 

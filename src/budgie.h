@@ -4,5 +4,5 @@
 
 class BudgieDesktopEnvironment : public GnomeDesktopEnvironment {
 public:
-    string name();
+    std::string name();
 };

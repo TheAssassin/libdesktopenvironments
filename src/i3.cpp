@@ -1,5 +1,7 @@
 #include "i3.h"
 
+using namespace std;
+
 bool I3DesktopEnvironment::gtkInterfaceFont(string &font) {
     // TODO: Find proper way to query the font name from i3
 

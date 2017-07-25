@@ -1,5 +1,7 @@
 #include "cinnamon.h"
 
+using namespace std;
+
 bool CinnamonDesktopEnvironment::gtkInterfaceFont(string &font) {
     // Cinnamon uses the GNOME infrastructure, too
     if(callProgramAndGetFirstLineOfOutput("gsettings get org.cinnamon.desktop.interface font-name", font)) {

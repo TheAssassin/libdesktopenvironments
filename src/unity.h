@@ -5,5 +5,5 @@
 
 class UnityDesktopEnvironment : public GnomeDesktopEnvironment {
 public:
-    string name();
+    std::string name();
 };

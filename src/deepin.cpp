@@ -1,5 +1,7 @@
 #include "deepin.h"
 
+using namespace std;
+
 bool DeepinDesktopEnvironment::gtkInterfaceFont(string &font) {
     // TODO: find proper way to query the font name from Deepin
 

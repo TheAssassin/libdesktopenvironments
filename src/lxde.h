@@ -4,6 +4,6 @@
 
 class LxdeDesktopEnvironment : public IDesktopEnvironment {
 public:
-    bool gtkInterfaceFont(string &font);
-    string name();
+    bool gtkInterfaceFont(std::string &font);
+    std::string name();
 };

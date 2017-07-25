@@ -19,6 +19,8 @@
 #include "unity.h"
 #include "xfce.h"
 
+using namespace std;
+
 void IDesktopEnvironment::stripNewlineCharacters(string &str) {
     str.erase(remove(str.begin(), str.end(), '\n'), str.end());
 }

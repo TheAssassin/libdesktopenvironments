@@ -3,6 +3,8 @@
 // global headers
 #include <sstream>
 
+using namespace std;
+
 bool GnomeDesktopEnvironment::gtkInterfaceFont(string &font) {
     // first of all, try to read font from the GTK RC
     if (getFontFromGtkRc(font))

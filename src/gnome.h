@@ -4,9 +4,9 @@
 
 class GnomeDesktopEnvironment : public IDesktopEnvironment {
 private:
-    bool configToolPath(string &path);
+    bool configToolPath(std::string &path);
 
 public:
-    bool gtkInterfaceFont(string &font);
-    string name();
+    bool gtkInterfaceFont(std::string &font);
+    std::string name();
 };

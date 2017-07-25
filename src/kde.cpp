@@ -4,6 +4,8 @@
 #include <fstream>
 #include <sstream>
 
+using namespace std;
+
 bool KDesktopEnvironment::configToolPath(string &path) {
     string programPath;
     

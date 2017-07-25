@@ -2,10 +2,8 @@
 
 #include "desktopenvironments.h"
 
-using namespace std;
-
 class XfceDesktopEnvironment : public IDesktopEnvironment {
 public:
-    bool gtkInterfaceFont(string &font);
-    string name();
+    bool gtkInterfaceFont(std::string &font);
+    std::string name();
 };
