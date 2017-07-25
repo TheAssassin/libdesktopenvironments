@@ -9,6 +9,6 @@ private:
     static bool searchInGtkRc(const std::string patter, std::string &output);
 
 public:
-    bool gtkInterfaceFont(std::string &font);
-    std::string name();
+    bool gtkInterfaceFont(std::string &font) override;
+    std::string name() override;
 };
