@@ -54,12 +54,14 @@ bool IDesktopEnvironment::searchLineInGtkRc(const string pattern, string &output
     stringstream pathToGtk3Rc;
     pathToGtk3Rc << pathToConfigHome() << "/.gtk-3.0/settings.ini";
 
-    vector<string> gtkRcPaths = {pathToGtk2Rc.str(), pathToGtk3Rc.str()};
+    string gtkRcPaths[] = { pathToGtk2Rc.str(), pathToGtk3Rc.str() };
 
-    for(auto &gtkRcPath : gtkRcPaths) {
+    for(size_t i = 0; i < sizeof(gtkRcPaths); i++) {
+        const string &gtkRcPath = gtkRcPaths[i];
+
         ifstream gtkRcFile(gtkRcPath.c_str());
 
-        if (gtkRcFile) {
+        if (gtkRcFile.is_open()) {
             string currentOutput;
 
             if (searchLineInFile(gtkRcFile, pattern, currentOutput)) {
@@ -77,7 +79,7 @@ string IDesktopEnvironment::pathToConfigHome() {
 
     string configDirectory;
 
-    if(xdgConfigHome != nullptr) {
+    if(xdgConfigHome != NULL) {
         configDirectory = xdgConfigHome;
     } else {
         stringstream path;
@@ -118,7 +120,7 @@ void IDesktopEnvironment::removeQuotationMarks(string &str) {
 bool IDesktopEnvironment::callProgramAndGetFirstLineOfOutput(const string command, string &output) {
     FILE *stream = popen(command.c_str(), "r");
 
-    if (stream == nullptr)
+    if (stream == NULL)
         return false;
 
     char *line;
@@ -129,7 +131,7 @@ bool IDesktopEnvironment::callProgramAndGetFirstLineOfOutput(const string comman
     output = line;
     free(line);
 
-    auto retCode = pclose(stream);
+    int retCode = pclose(stream);
 
     if (retCode != 0)
         return false;
@@ -137,6 +139,12 @@ bool IDesktopEnvironment::callProgramAndGetFirstLineOfOutput(const string comman
     stripNewlineCharacters(output);
 
     return true;
+}
+
+bool IDesktopEnvironment::type(const string programName, string &programPath) {
+    stringstream command;
+    command << "type '" << programName << "' 2>&1 1>/dev/null";
+    return callProgramAndGetFirstLineOfOutput(command.str(), programPath);
 }
 
 IDesktopEnvironment* IDesktopEnvironment::getInstance(const string desktopEnvironment) {
@@ -170,13 +178,13 @@ IDesktopEnvironment* IDesktopEnvironment::getInstance(const string desktopEnviro
         }
     }
 
-    return nullptr;
+    return NULL;
 }
 
 IDesktopEnvironment* IDesktopEnvironment::getInstance() {
     char *xdgCurrentDesktop = getenv("XDG_CURRENT_DESKTOP");
 
-    if (xdgCurrentDesktop != nullptr) {
+    if (xdgCurrentDesktop != NULL) {
         string xdgCurrentDesktopValue = xdgCurrentDesktop;
 
         if (xdgCurrentDesktopValue.length() > 0) {
@@ -191,5 +199,5 @@ IDesktopEnvironment* IDesktopEnvironment::getInstance() {
         }
     }
 
-    return nullptr;
+    return NULL;
 }

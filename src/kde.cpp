@@ -8,24 +8,18 @@ using namespace std;
 
 bool KDesktopEnvironment::configToolPath(string &path) {
     string programPath;
-    
-    auto type = [&programPath](string programName) {
-        stringstream command;
-        command << "type '" << programName << "' 2>&1 1>/dev/null";
-        return callProgramAndGetFirstLineOfOutput(command.str(), programPath);
-    };
 
-    if (type("kde4-config")) {
+    if (type("kde4-config", programPath)) {
         path = programPath;
         return true;
     }
 
-    if (type("kde5-config")) {
+    if (type("kde5-config", programPath)) {
         path = programPath;
         return true;
     }
 
-    if (type("kde-config")) {
+    if (type("kde-config", programPath)) {
         path = programPath;
         return true;
     }

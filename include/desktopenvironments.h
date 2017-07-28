@@ -27,6 +27,8 @@ protected:
     static void removeQuotationMarks(std::string &str);
     //! Tries to resolve the path to the configuration home (e.g. ~/.config)
     static std::string pathToConfigHome();
+    //! Runs the type command to detect whether applications are installed, and if they are, returns the full path to them
+    static bool type(const std::string programName, std::string &programPath);
 
 public:
     //! Creates a new instance for the given desktop environment name, or nullptr if the DE is not supported

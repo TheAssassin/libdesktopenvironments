@@ -9,9 +9,9 @@ int main() {
     cout << "libdesktopenvironments demo" << endl
          << "===========================" << endl << endl;
 
-    auto *desktopEnvironment = IDesktopEnvironment::getInstance();
+    IDesktopEnvironment *desktopEnvironment = IDesktopEnvironment::getInstance();
 
-    if (desktopEnvironment == nullptr) {
+    if (desktopEnvironment == NULL) {
         cerr << "Error: could not detect desktop environment!" << endl;
         return 1;
     }

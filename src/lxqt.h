@@ -4,6 +4,6 @@
 
 class LxqtDesktopEnvironment : public IDesktopEnvironment {
 public:
-    bool gtkInterfaceFont(std::string &font) override;
-    std::string name() override;
+    bool gtkInterfaceFont(std::string &font);
+    std::string name();
 };

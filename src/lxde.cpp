@@ -4,16 +4,16 @@
 using namespace std;
 
 bool LxdeDesktopEnvironment::gtkInterfaceFont(string &font) {
-    auto configDirectory = pathToConfigHome();
+    string configDirectory = pathToConfigHome();
 
     ifstream configFile;
-    configFile.open(configDirectory + "/lxde/config");
+    configFile.open((configDirectory + "/lxde/config").c_str());
 
     if(!configFile)
-        configFile.open(configDirectory + "/lxsession/Lubuntu/desktop.conf");
+        configFile.open((configDirectory + "/lxsession/Lubuntu/desktop.conf").c_str());
 
     if(!configFile)
-        configFile.open(configDirectory + "/lxsession/LXDE/desktop.conf");
+        configFile.open((configDirectory + "/lxsession/LXDE/desktop.conf").c_str());
 
     if(!configFile)
         return false;

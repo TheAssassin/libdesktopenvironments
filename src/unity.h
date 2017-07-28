@@ -5,5 +5,5 @@
 
 class UnityDesktopEnvironment : public GnomeDesktopEnvironment {
 public:
-    std::string name() override;
+    std::string name();
 };
