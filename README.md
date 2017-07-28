@@ -8,7 +8,7 @@ Many GUI frameworks have similar methods, but when trying to use something
 basic, like e.g. FTLK, the functionality is often missing. These are the
 cases when this library can be used.
 
-libdesktopenvironments is written in C++11 and does not have any
+libdesktopenvironments is written in C++98 and does not have any
 dependencies but the standard library, which means it is really, really
 portable.
 
