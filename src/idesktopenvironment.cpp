@@ -152,33 +152,35 @@ IDesktopEnvironment* IDesktopEnvironment::getInstance(const string desktopEnviro
 
     stringToLower(copy);
 
+    IDesktopEnvironment *newDe = NULL;
+
     if (copy.length() > 0) {
         if (stringStartsWith(copy, "kde")) {
-            return new KDesktopEnvironment();
+            newDe = new KDesktopEnvironment();
         } else if (stringStartsWith(copy, "cinnamon")) {
-            return new CinnamonDesktopEnvironment();
+            newDe = new CinnamonDesktopEnvironment();
         } else if (stringStartsWith(copy, "gnome")) {
-            return new GnomeDesktopEnvironment();
+            newDe = new GnomeDesktopEnvironment();
         } else if (stringStartsWith(copy, "unity")) {
-            return new UnityDesktopEnvironment();
+            newDe = new UnityDesktopEnvironment();
         } else if(stringStartsWith(copy, "budgie")) {
-            return new BudgieDesktopEnvironment();
+            newDe = new BudgieDesktopEnvironment();
         } else if (stringStartsWith(copy, "mate")) {
-            return new MateDesktopEnvironment();
+            newDe = new MateDesktopEnvironment();
         } else if (stringStartsWith(copy, "xfce")) {
-            return new XfceDesktopEnvironment();
+            newDe = new XfceDesktopEnvironment();
         } else if (stringStartsWith(copy, "lxde")) {
-            return new LxdeDesktopEnvironment();
+            newDe = new LxdeDesktopEnvironment();
         } else if (stringStartsWith(copy, "lxqt")) {
-            return new LxqtDesktopEnvironment();
+            newDe = new LxqtDesktopEnvironment();
         } else if (stringStartsWith(copy, "deepin")) {
-            return new DeepinDesktopEnvironment();
+            newDe = new DeepinDesktopEnvironment();
         } else if (stringStartsWith(copy, "i3")) {
-            return new I3DesktopEnvironment();
+            newDe = new I3DesktopEnvironment();
         }
     }
 
-    return NULL;
+    return newDe;
 }
 
 IDesktopEnvironment* IDesktopEnvironment::getInstance() {
