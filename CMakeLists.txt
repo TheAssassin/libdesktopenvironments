@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 98)
 
 add_subdirectory(src)
 
+include_directories(include)
 add_executable(libde_demo demo.cpp)
-target_link_libraries(libde_demo desktopenvironment)
+target_link_libraries(libde_demo libdesktopenvironments)
 
